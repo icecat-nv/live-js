@@ -1,0 +1,53 @@
+{
+  "name": "IcecatLive",
+  "version": "2.0.0",
+  "dependencies": {
+    "babel-polyfill": "^6.23.0",
+    "core-js": "^3.1.3",
+    "hammerjs": "^2.0.8",
+    "handlebars": "^4.0.5",
+    "iframe-resizer": "^3.6.1",
+    "jquery": "^3.2.1",
+    "popper.js": "^1.14.3",
+    "slick-carousel": "^1.6.0",
+    "swiper": "^4.2.2",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-plugin-transform-exponentiation-operator": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "css-loader": "^0.28.4",
+    "expose-loader": "^0.7.3",
+    "file-loader": "^0.11.2",
+    "node-sass": "^4.5.3",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-loader": "^2.1.3",
+    "raw-loader": "^0.5.1",
+    "sass-loader": "^6.0.6",
+    "script-loader": "^0.7.0",
+    "style-loader": "^0.18.2",
+    "sugarss": "^1.0.1",
+    "url-loader": "^0.5.9",
+    "webpack": "^3.0.0",
+    "webpack-bundle-analyzer": "^3.0.3",
+    "webpack-dev-server": "^2.5.0",
+    "webpack-merge": "^4.1.0"
+  },
+  "browserslist": [
+    "last 2 version",
+    "ie 8",
+    "ie 9"
+  ],
+  "scripts": {
+    "preinstall": "echo \"Hey how, let's go!\"",
+    "postinstall": "npm run build",
+    "build": "NODE_ENV=production node_modules/.bin/webpack",
+    "dev-server": "node_modules/.bin/webpack && node_modules/.bin/webpack-dev-server --hot"
+  },
+  "author": "6etmah@gmail.com",
+  "license": "ISC"
+}

@@ -1,0 +1,59 @@
+$grey-text-color: #717171;
+
+.IcecatLive .-icecat-table[tab='related_tpl'] {
+  border-bottom: 1px solid #c5c9e2;
+  margin-bottom: 5px;
+}
+
+.for-featuregroups .-icecat-table .-icecat-tableRow:nth-child(odd) {
+  background-color: #f4f4f4;
+}
+
+.-icecat-feature-group {
+  border: 1px solid #f4f4f4;
+  margin: 15px 0px;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.IcecatLive .-icecat-table .-icecat-tableRow {
+  display: table-row;
+  width: 100%;
+}
+
+.IcecatLive .-icecat-table .-icecat-tableRow > * {
+  word-break: break-word;
+}
+
+.IcecatLive .-icecat-table .-icecat-tableRow .-icecat-ds_label {
+  display: table-cell;
+  border: 0 none;
+  clear: both;
+  padding: 7px 5px 7px 7px;
+  vertical-align: middle;
+  width: 50%;
+}
+
+.IcecatLive .-icecat-table .-icecat-tableRow .-icecat-ds_data {
+  width: 100%;
+  display: table-cell;
+  padding: 7px 0 7px 5px;
+  vertical-align: middle;
+  color: $grey-text-color;
+}
+
+.IcecatLive .-icecat-table .-icecat-tableRowHead {
+  display: table-row;
+  //background-color: #f4f4f4;
+}
+
+.IcecatLive .-icecat-table .-icecat-tableRowHead span {
+  font-weight: 500;
+  display: inline-block;
+  background-color: #f4f4f4;
+  padding: 7px 7px;
+  width: 200%;
+  white-space: nowrap;
+  font-size: 17px;
+}

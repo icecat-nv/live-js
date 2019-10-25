@@ -1,0 +1,20 @@
+#IcecatLive {
+  .-icecat-hidden {
+    opacity: 0;
+  }
+  .-icecat-hoverable {
+    cursor: pointer;
+  }
+
+  .-icecat-text-line_cropped {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .-icecat-text-line_hoverable {
+    cursor: pointer;
+    display: inline-block;
+    border-bottom: 1px dashed black;
+  }
+
+}

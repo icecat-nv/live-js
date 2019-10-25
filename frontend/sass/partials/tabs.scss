@@ -1,0 +1,20 @@
+$light-grey: #eaeaea;
+
+#icecatLiveTabs {
+  border-bottom: 2px solid black;
+  padding: 20px 0px;
+  margin-bottom: 20px;
+  li {
+    display: inline-block;
+    font-weight: 500;
+    padding: 0px 20px;
+    border-right: 1px solid $light-grey;
+    &:last-child {
+      border-right: none;
+    }
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  }
+}

@@ -1,0 +1,429 @@
+// Mandatory is first part of the page. The html on which this style is being apllied
+// locate in js/templates/mandatory.tpl
+
+// CURRENTLY NOT USED!
+
+.IcecatLive {
+  .-icecat-title {
+    display: table;
+    position: relative;
+    min-height: 45px;
+    margin: 20px 0 5px;
+    padding: 0;
+
+    img{
+      position: relative;
+      max-width: 95px;
+      float: left;
+      margin-right: 25px;
+
+      //content: url(http://images.icecat.biz/thumbs/SUP25.jpg);
+    }
+  }
+
+  .-icecat-product_wrapper {
+    width: 100%;
+    padding: 0;
+  }
+
+  // in html we have here #tooltip-containeer, but without styles,
+  // and without any content,
+  // so let's look after this situation
+
+  // Left side contain only Image of the product
+  .-icecat-left_side {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    div.-icecat-product_img {
+      width: 95%;
+      text-align: center;
+      padding: 0 2.5%;
+      min-height: 200px;
+      img {
+        cursor: pointer;
+        max-width: 100%;
+        max-height: 188px;
+      }
+    }
+  }
+
+  // Right side is actually a slider with its buttons
+  .-icecat-right_side {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    min-height: 175px;
+
+    .-icecat-slide_wrapper_bar {
+      position: relative;
+      width: 390px;
+      height: 90px;
+      display: block;
+      overflow: hidden;
+      margin: 0 auto;
+      padding: 0 2.5%;
+
+      // Arrows: previous and next:
+      .-icecat-prevDis {
+        width: 14px;
+        height: 30px;
+        background: url(../img/arrows-sprite1.png) no-repeat -23px 0;
+        top: 35px;
+        position: absolute;
+        cursor: pointer;
+        z-index: 100;
+        left: 0;
+      }
+      .-icecat-prev {
+        width: 14px;
+        height: 30px;
+        background: url(../img/arrows-sprite1.png) no-repeat 3px 0;
+        top: 35px;
+        position: absolute;
+        cursor: pointer;
+        z-index: 100;
+        left: 0;
+      }
+      .-icecat-next {
+        width: 12px;
+        height: 30px;
+        background: url(../img/arrows-sprite1.png) no-repeat -12px 0;
+        top: 35px;
+        right: 20px;
+        position: absolute;
+        cursor: pointer;
+        z-index: 100;
+      }
+      .-icecat-nextDis {
+        width: 12px;
+        height: 30px;
+        background: url(../img/arrows-sprite1.png) no-repeat -37px 0;
+        top: 35px;
+        right: 0;
+        position: absolute;
+        cursor: pointer;
+        z-index: 100;
+      }
+
+      // Slider itself:
+      .-icecat-slide_images {
+        position: relative;
+        width: 390px;
+        height: 90px;
+        padding-left: 15px;
+        padding-right: 15px;
+        float: left;
+        overflow: hidden;
+        &:before {
+          left: 0;
+        }
+        &:after {
+          right: 18px;
+        }
+        &:before, &:after {
+          content: "";
+          display: block;
+          background: #FFF;
+          height: 100%;
+          width: 15px;
+          position: absolute;
+          top: 0;
+          z-index: 99;
+        }
+
+        // Slider's images' container
+        .-icecat-all_imgs {
+          width: 9999px;
+          position: relative;
+          left: 0;
+          overflow: hidden;
+          .-icecat-mini_img {
+            height: 75px;
+            width: 75px;
+            float: left;
+            opacity: 0.8;
+            margin: 5px;
+            &:hover {
+              cursor: pointer;
+              opacity: 1;
+              position: relative;
+              background-color: #FFF;
+              border-radius: 10px;
+              box-shadow: 0 0 10px #ccc;
+
+              -moz-transition: all .5s ease-out;
+              -o-transition: all .5s ease-out;
+              -webkit-transition: all .5s ease-out;
+              -ms-transition: all .5s ease-out;
+              transition: all .5s ease-out;
+            }
+            img {
+              position: relative;
+              width: 75px;
+              height: 75px;
+            }
+            a {
+              display: inline-block;
+              width: 75px;
+              height: 75px;
+            }
+            a.-icecat-video {
+              margin-top: 12px;
+            }
+            a.-icecat-video,
+            .-icecat-video img,
+            .-icecat-video:before {
+              height: 50px;
+            }
+          }
+        }
+
+        .-icecat-flash360:before {
+          background: url(../img/flash360.png);
+        }
+        .-icecat-video:before {
+          background: url(../img/play.png);
+          background-position: 0;
+        }
+        .-icecat-flash360:before,
+        .-icecat-video:before {
+          content: "";
+          display: block;
+          width: 75px;
+          height: 75px;
+          position: absolute;
+          z-index: 1;
+        }
+      }
+    }
+  }
+
+  // This is the part, which response for modal window's styles
+  .-icecat-modal_window {
+    position: fixed;
+    z-index: 1003;
+    width: auto;
+    min-width: 465px;
+    height: auto;
+    padding-bottom: 50px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #FFF;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #000;
+    .-icecat-modal_slide_wrapper {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      .-icecat-close,
+      .-icecat-close_mobile {
+        width: 12px;
+        height: 12px;
+        position: absolute;
+        right: 10px;
+        z-index: 1200;
+        //background: url(../img/close.png) no-repeat center top #FF6800;
+        cursor: pointer;
+        text-align: center;
+      }
+      .-icecat-full_size_img {
+        width: 98%;
+        height: 97%;
+        position: relative;
+        overflow: hidden;
+        margin: 1% 1% 0;
+        img {
+          background: none;
+          display: block;
+          position: relative;
+          margin: 0 auto;
+        }
+        .-icecat-loader {
+          background: url(../img/load.gif) center no-repeat HSLA(0, 0%, 100%, .4);
+          height: 100%;
+          width: 100%;
+          position: absolute;
+          top: 0;
+          z-index: 2;
+          pointer-events: none;
+        }
+      }
+
+
+      // Control panel for modal window
+      .-icecat-slide_content {
+        position:absolute;
+        height:50px;
+        background-color:#FFF;
+        border-bottom-left-radius:10px;
+        border-bottom-right-radius:10px;
+        width:100%;
+
+        // Zoom controllers
+        .-icecat-nav_details {
+          display: table;
+          max-width:156px;
+          margin:12px auto 0;
+          #zoomIn {
+            background-position:0 0;
+          }
+          .-icecat-zoomInDeactivate {
+            background-position:0 100% !important;
+          }
+          #zoomOut {
+            background-position:-25px 0;
+          }
+          .-icecat-zoomOutDeactivate {
+            background-position:-25px 100% !important;
+          }
+          #initialState {
+            background-position:-100px 0;
+          }
+          .-icecat-initialStateDeactivate {
+            background-position:-100px 100% !important;
+          }
+          a {
+            background:url(../img/modal_window_button1.png) no-repeat;
+            display:block;
+            float:left;
+            width:25px;
+            height:25px;
+            border:0;
+            outline:0;
+            margin:0 7px;
+            position: relative;
+            &:hover > span {
+              display: block !important;
+            }
+            span {
+              background: #FFF;
+              border: 1px solid #828386;
+              color: #000;
+              height: 16px;
+              line-height: 18px;
+              padding: 7px;
+              position: absolute;
+              top: -40px;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              box-shadow: 0 0 8px HSLA(0,0%,0%,0.4);
+              box-sizing: content-box;
+              &:after {
+                content: "\00A0";
+                background: url(../img/zoom-helper-arrow.png) no-repeat;
+                display: block;
+                width: 14px;
+                height: 9px;
+                margin: 4px auto 0;
+              }
+            }
+          }
+        }
+
+        // Prev and next button in modal window
+        .-icecat-nav_buttons {
+          width:100px;
+          position:absolute;
+          right:0;
+          bottom:12px;
+          box-sizing:border-box;
+          padding:0 10px;
+          .-icecat-prev_button {
+            width:12px;
+            height:27px;
+            background:url(../img/arrows-sprite1.png) no-repeat 0 0;
+            position:relative;
+            float:left;
+            cursor:pointer;
+          }
+          .-icecat-next_button {
+            width:11px;
+            height:27px;
+            background:url(../img/arrows-sprite1.png) no-repeat -12px 0;
+            position:relative;
+            float:right;
+            cursor:pointer;
+          }
+        }
+      }
+    }
+  }
+
+  // Good's description:
+
+  // this is the table of basic data
+  .-icecat-info_item {
+    width: 100%;
+    position: relative;
+    display: table;
+    padding: 0;
+    .-icecat-info {
+      display: table-row;
+      position: relative;
+      width: 100%;
+
+      .-icecat-info_product {
+        width:95%;
+        color:#000;
+        padding:0;
+        .-icecat-info_label {
+          width:150px;
+          font-size:13px;
+          font-weight:bold;
+        }
+        .-icecat-info_text {
+          text-align:left;
+          span {
+            vertical-align: middle;
+          }
+        }
+        &.-icecat-ean,
+        &.-icecat-category {
+          height: 14px;
+          line-height: 14px;
+          padding-right: 5%;
+          overflow: hidden;
+          & .-icecat-info_text span,
+          & .-icecat-info_text span {
+            position: relative;
+          }
+        }
+        &.-icecat-ean.-icecat-visibility,
+        &.-icecat-category.-icecat-visibility,
+        &.-icecat-category.-icecat-no-more {
+          height: auto;
+        }
+        .-icecat-more-ean,
+        .-icecat-more-category {
+          background: url(../img/sprite2.png) no-repeat scroll -113px -29px;
+          border: 0;
+          outline: 0;
+          cursor: pointer;
+          display: block;
+          height: 13px;
+          width: 13px;
+          position: absolute;
+          top: 1px;
+          right: -20px;
+        }
+        .-icecat-more-ean.-icecat-open-ean,
+        .-icecat-more-category.-icecat-open-category {
+          background-position: -100px -29px;
+        }
+      }
+    }
+  }
+
+  // this is long description of the good
+  .-icecat-text {
+    width:95%;
+    display:block;
+    padding:0;
+    & p {
+      margin:12px 0;
+    }
+  }
+}

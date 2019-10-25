@@ -1,0 +1,29 @@
+.IcecatLive {
+  .-icecat-info_product {
+    .-icecat-more-ean,
+    .-icecat-more-category {
+      background: url(../img/sprite2.png) no-repeat scroll -113px -29px;
+      border: 0;
+      outline: 0;
+      cursor: pointer;
+      height: 13px;
+      width: 13px;
+      display: inline-block;
+    }
+    .-icecat-more-ean.-icecat-open-ean,
+    .-icecat-more-category.-icecat-open-category {
+      background-position: -100px -29px;
+    }
+  }
+
+  .-icecat-hidden-content {
+    display: none;
+    padding-left: 1em;
+  }
+
+  .-icecat-visibility {
+    .-icecat-hidden-content {
+      display: block;
+    }
+  }
+}

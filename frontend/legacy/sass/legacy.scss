@@ -1,0 +1,19 @@
+// TODO clean up old styles and divide them into separate sass modules
+@import './partials/all-rest.scss';
+
+// TODO implement incapsulation of the normalize.scss
+// @import './lib/normalize.scss';
+@import './lib/slick.scss';
+
+// TODO finalize all commented modules!!!
+@import './basic/_var.scss';
+//@import './basic/_defaults.scss';
+//@import './basic/_layout.scss';
+
+
+//@import './partials/mandatory.scss';
+@import './partials/slick-customization.scss';
+@import './partials/tours.scss';
+@import './partials/video.scss';
+
+@import './basic/_media.scss';

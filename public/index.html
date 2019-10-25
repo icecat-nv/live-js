@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IcecatLive dev hey</title>
+
+    <style>
+        .checkbox-cont{
+            display: inline-block;
+            border: 1px solid black;
+            padding: 3px;
+            border-radius: 6px;
+            background: aliceblue;
+        }
+
+        .checkbox-cont label{
+            user-select: none;
+        }
+    </style>
+
+    <script src="/js/live-current-2.js"></script>
+</head>
+<body>
+
+<h1 style="color: red;">HTML Request</h1>
+<div id= "divForButt" style="width = 100%; height=5%;">
+    <h1>Demo</h1>
+    shopname: <input id="shopname" type="text" size="15" value="openicecat-live">
+    product_id: <input id="selectedProd" type="text" size="20" value="18253015">
+    langCode: <input id="langCode" type="text" size="4" value="en">
+
+    <button id="secBtn" onclick="IcecatLive.getRTB('#bobik',{
+        'shopname': document.querySelector('#shopname').value,
+        'icecat_id': document.querySelector('#selectedProd').value
+    }, document.querySelector('#langCode').value)">rtb</button>
+    <button id="secBtn" onclick="IcecatLive.getDatasheet('#bobik',{
+        'shopname': document.querySelector('#shopname').value,
+        'icecat_id': document.querySelector('#selectedProd').value
+    }, document.querySelector('#langCode').value)">Press for load selected</button>
+    <button id="secBtn" onclick="IcecatLive.getVideos('#bobik',{
+        'shopname': document.querySelector('#shopname').value,
+        'icecat_id': document.querySelector('#selectedProd').value
+    },document.querySelector('#langCode').value)">Press for load videos</button>
+    <button id="secBtn" onclick="IcecatLive.get3DTours('#bobik',{
+    'shopname': document.querySelector('#shopname').value,
+    'icecat_id': document.querySelector('#selectedProd').value,
+    }, document.querySelector('#langCode').value)">Press for load 3DTours</button>
+</div>
+
+
+
+<h1 style="color: red;">Separate-call</h1>
+<div id= "divForButt" style="width = 100%; height=5%;">
+    <div>
+        <h1>Demo</h1>
+        shopname: <input id="shopnameSC" type="text" size="15" value="openicecat-live">
+        product_id: <input id="selectedProdSC" type="text" size="20" value="18253015">
+        langCode: <input id="langCodeSC" type="text" size="4" value="en">
+        timestamp: <input id="timestampSC" type="text" size="10" value="">
+        signature: <input id="signatureSC" type="text" size="20" value="">
+
+        <button id="secBtn" onclick="processSeparateCall()">Press for load selected</button>
+    </div>
+    <div style="margin-top: 15px;">
+        <div class="checkbox-cont">
+            <input type="checkbox" id="titleSC">
+            <label for="titleSC">Title</label>
+        </div>
+        <div class="checkbox-cont">
+            <input type="checkbox" id="gallerySC">
+            <label for="gallerySC">Gallery</label>
+        </div>
+        <div class="checkbox-cont">
+            <input type="checkbox" id="featurelogosSC">
+            <label for="featurelogosSC">Featurelogos</label>
+        </div>
+        <div class="checkbox-cont">
+            <input type="checkbox" id="featuregroupsSC">
+            <label for="featuregroupsSC">Specifications</label>
+        </div>
+        <div class="checkbox-cont">
+            <input type="checkbox" id="reasonstobuySC">
+            <label for="reasonstobuySC">Reasonstobuy</label>
+        </div>
+        <div class="checkbox-cont">
+            <input type="checkbox" id="reviewsSC">
+            <label for="reviewsSC">Reviews</label>
+        </div>
+        <div class="checkbox-cont">
+            <input type="checkbox" id="marketingtextSC">
+            <label for="marketingtextSC">Marketingtext</label>
+        </div>
+        <div class="checkbox-cont">
+            <input type="checkbox" id="videosSC">
+            <label for="videosSC">Videos</label>
+        </div>
+        <div class="checkbox-cont">
+            <input type="checkbox" id="toursSC3d">
+            <label for="toursSC3d">Tours3d</label>
+        </div>
+        <div class="checkbox-cont">
+            <input type="checkbox" id="manualsSC">
+            <label for="manualsSC">Manuals</label>
+        </div>
+        <div class="checkbox-cont">
+            <input type="checkbox" id="essentialinfoSC">
+            <label for="essentialinfoSC">Essentialinfo</label>
+        </div>
+        <div class="checkbox-cont">
+            <input type="checkbox" id="bulletpointsSC">
+            <label for="bulletpointsSC">BulletPoints</label>
+        </div>
+    </div>
+</div>
+
+<div style="margin: 20px;border: 1px dashed black;display: inline-block;padding: 20px;background: linear-gradient(to top, #fefcea, #f1da36);border-radius: 11px;">
+    <button onclick="IcecatLive.applyCustomCSS('/custom.css')">Use custom css</button>
+    <button onclick="IcecatLive.applyDefaultCSS()">Use default css</button>
+</div>
+
+<div id="bobik" style="width = 100%; height=45%"></div>
+
+
+<div id="titleSC_container" style="width = 100%; height=45%"></div>
+<div id="gallerySC_container" style="width = 100%; height=45%"></div>
+<div id="featurelogosSC_container" style="width = 100%; height=45%"></div>
+<div id="essentialinfoSC_container" style="width = 100%; height=45%"></div>
+<div id="marketingtextSC_container" style="width = 100%; height=45%"></div>
+<div id="manualsSC_container" style="width = 100%; height=45%"></div>
+<div id="reasonstobuySC_container" style="width = 100%; height=45%"></div>
+<div id="toursSC3d_container" style="width = 100%; height=45%"></div>
+<div id="videosSC_container" style="width = 100%; height=45%"></div>
+<div id="featuregroupsSC_container" style="width = 100%; height=45%"></div>
+<div id="reviewsSC_container" style="width = 100%; height=45%"></div>
+<div id="bulletpointsSC_container" style="width = 100%; height=45%"></div>
+
+<script>
+    function processSeparateCall(){
+        var checkboxList = document.querySelectorAll('input[type=checkbox]');
+        var langCheckbox = document.getElementById('langCodeSC')
+        var containerParams = {};
+        var key;
+        checkboxList.forEach(function (element) {
+            if(element.checked){
+                key = element.id.replace('SC', '');
+                containerParams[key] = '#' + element.id + '_container';
+            }
+        });
+
+        var i = 0
+        for (var key in containerParams) {
+            i++
+        }
+        if(!i){
+            containerParams = '#bobik';
+        }
+
+        IcecatLive.getDatasheet(containerParams, {
+            'shopname': document.querySelector('#shopnameSC').value,
+            'icecat_id': document.querySelector('#selectedProdSC').value,
+            'signature': document.querySelector('#signatureSC').value,
+            'timestamp': document.querySelector('#timestampSC').value
+        }, langCheckbox.value)
+    }
+</script>
+
+</body>
+</html>

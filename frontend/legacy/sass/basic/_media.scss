@@ -1,0 +1,262 @@
+@media only screen and (max-width: 1024px) {
+  #IcecatLive {
+    div[tab="multimedia_tpl"] {
+      .-icecat-div_table_cell {
+        width: calc(100% / 3);
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #IcecatLive #video-section #currentVideo {
+    z-index: 1 !important; // override inline
+  }
+}
+@media only screen and (max-width: 768px) {
+  #IcecatLive {
+
+    /*
+      gallery slider -_- soo messy classNames wow
+      TODO improve namings of classnames of old part of Icecatlive!!!
+    */
+    .-icecat-product_wrapper {
+      .-icecat-slide_wrapper_bar {
+        .-icecat-prevDis {
+          background: url(../img/arrows-sprite1.png) no-repeat 3px 0;
+        }
+        .-icecat-nextButt {
+
+        }
+      }
+    }
+
+    div[tab="multimedia_tpl"] {
+      .-icecat-div_table_cell {
+        width: 100%;
+      }
+    }
+
+    #tours-section, #video-section {
+      // this hack is for removing of the horizontal scrollbar
+      overflow: hidden;
+      
+      ul.slick-previews {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 300px;
+        padding: 0;
+        margin: 0;
+        li.slick-preview {
+          width: 300px;
+          height: 180px;
+          padding: 0;
+          border: 0;
+        }
+        ul.slick-dots {
+          // !important applied due to inline styiling by plugin
+          display: none !important;
+        }
+      }
+    }
+    #video-section {
+      #currentVideo {
+        //position: absolute;
+      }
+      div.video-previews-wrapper {
+        position: absolute;
+        top: 0;
+        // reset flex:
+        display: block;
+        //@extend .video-previews;
+        transform: none;
+      }
+      ul.video-previews {
+        position: relative;
+        left: 0;
+        // reset flex:
+        display: block;
+        transform: translateX(-50%);
+        background-size: cover; // some kind of hack. i dont know why it works in a such way
+      }
+    }
+    #tours-section {
+      #tour-current {
+        object.flash.tour-item {
+          position: relative;
+          left: calc(50% - 360px / 2);
+          width: 360px;
+          height: 360px;
+          margin: 0;
+        }
+        .tour-item[data-picsbatch] {
+          .wrapper {
+            min-height: 300px;
+            .spritespin-instance {
+              height: 400px !important; //due to inline
+            }
+            .spritespin-instance.with-canvas {
+              canvas {
+                position: relative !important; // due to inline
+                left: calc(50% - 400px / 2) !important; // due to inline // although we move not to the exact center but by half of size to left
+                width: 400px !important;
+                height: auto !important;
+              }
+            }
+          }
+        }
+      }
+      button.slick-arrow {
+        z-index: 1;
+      }
+      button.slick-prev {
+        left: -25px;
+      }
+      button.slick-next {
+        right: -25px;
+      }
+    }
+  }
+}
+
+// TODO this is copy-paste from plain style.css, need to rework this piece of shit
+@media only screen and (min-width: 768px) {
+  #IcecatLive .-icecat-rtb_img_wrapper {
+    width: 200px;
+  }
+  #IcecatLive .-icecat-modal_window {
+    margin: auto;
+    top: 10%;
+    bottom: 10%;
+  }
+
+  #IcecatLive .-icecat-left_side {
+    position: relative;
+    display: inline-block;
+    width: 27.5%;
+    float: left;
+    padding-right: 2.5%;
+  }
+
+  #IcecatLive .-icecat-left_side div.-icecat-product_img {
+    width: 95%;
+    text-align: center;
+    padding: 0 2.5%;
+  }
+
+  #IcecatLive .-icecat-right_side {
+    position: relative;
+    display: inline-block;
+    width: 65.5%;
+    padding-left: 2.5%;
+    float: left;
+  }
+
+  #IcecatLive .-icecat-product_wrapper .-icecat-slide_wrapper_bar {
+    margin: 0;
+  }
+
+  #IcecatLive .-icecat-product_wrapper .-icecat-slide_wrapper_bar .-icecat-prev {
+    width: 11px;
+    height: 35px;
+    background: url(../img/arrows-sprite1.png) no-repeat 0 0;
+  }
+
+  #IcecatLive .-icecat-product_wrapper .-icecat-slide_wrapper_bar .-icecat-slide_images {
+    width: 360px;
+  }
+
+  #IcecatLive div.-icecat-download_bar .-icecat-feature-logo:first-child {
+    padding-left: 21px;
+  }
+
+  #IcecatLive {
+    height: 95%;
+  }
+
+  #IcecatLive .-icecat-table {
+    padding-top: 1%;
+    padding-bottom: 1%;
+  }
+
+  #IcecatLive .-manuals-container div.-icecat-div_table_cell .-icecat-ds_data {
+    padding-left: 2%;
+  }
+
+  #IcecatLive .-manuals-container div.-icecat-div_table_cell .-icecat-ds_label img {
+    width: 100%;
+    max-width: 32px;
+  }
+
+  #IcecatLive .-manuals-container div.-icecat-div_table_cell .-icecat-ds_label {
+    min-height: 40px;
+  }
+
+  #IcecatLive .-icecat-table[tab=featureGroups_tpl] .-icecat-col-left, #IcecatLive .-icecat-table[tab=featureGroups_tpl] .-icecat-col-right {
+    float: left;
+    width: 49%;
+    max-width: 465px;
+    padding: .6% 1% .6% 0;
+  }
+
+  #IcecatLive .-icecat-review div.-icecat-div_table_cell {
+    padding: 0 !important;
+  }
+
+  #IcecatLive .-icecat-review div.-icecat-head {
+    background-color: #eef1fa;
+    font-weight: normal;
+    color: #000;
+  }
+
+  #IcecatLive .-icecat-review div.-icecat-left {
+    width: 30% !important;
+    float: left;
+  }
+
+  #IcecatLive .-icecat-review div.-icecat-center {
+    width: 45% !important;
+    float: left !important;
+    padding-left: 0 !important;
+  }
+
+  #IcecatLive .-icecat-review div.-icecat-center div.-icecat-head {
+    padding-left: 0;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  #IcecatLive .-icecat-review div.-icecat-right {
+    width: 25% !important;
+    float: right !important;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  #IcecatLive {
+    #tours-section, #video-section {
+      ul.slick-previews {
+        width: 300px;
+        li.slick-preview {
+          width: 300px; /*!important; // due to inline!*/
+          height: 180px;
+        }
+      }
+    }
+    #tours-section {
+      #tour-current {
+        object.flash.tour-item {
+          width: 300px;
+          height: 300px;
+          left: calc(50% - 300px / 2);
+        }
+        .spritespin-instance.with-canvas {
+          canvas {
+            left: calc(50% - 400px / 2) !important; // due to inline
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,154 @@
+#video-section {
+  & * {
+    box-sizing: border-box;
+  }
+  #videoTab {
+    margin-bottom: 1em;
+  }
+
+  .content-wrapper {
+    position: relative;
+    
+    #currentVideoWrapper {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      #currentVideo {
+        transition: all 300ms ease;
+      }
+      & *:focus {
+        outline: none;
+      }
+    }
+
+    // Own html structure:
+    div.video-previews-wrapper {
+      position: relative;
+      left: 50%;
+      transform: translate(-50%);
+      margin: 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      //position: absolute;
+      //left: 50%;
+      //transform: translate(-50%);
+      //max-width: 620px;
+    }
+    ul.video-previews {
+      position: relative;
+      max-width: 620px;
+      margin: 0 auto;
+      padding: 0;
+      list-style: none;
+      li.video-preview {
+        position: relative;
+        border: 20px solid white;
+        background-repeat: no-repeat;
+        background-size: cover;
+        &:after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translateX(-50%) translateY(-50%);
+          width: 35px;
+          height: 35px;
+          background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAA0CAQAAABI31KIAAABHUlEQVR4Ae2Vu0oDQRRAB2xSWVmmtQncLzFREUUsnW/wJ0SCWgQV8TUQBBEsjlgIFoJFCsFCCT5QgwZFtPGtncUWIcTZnd2pAnNOf2Bn5t5VgUCge8mpPtWrevxD+cbi1KTq948VXvjlbMM/Jk2aPPPjHZM7Ip88Y3JLy0e+M8fkmnYfMsbkkk7v+Uodkzr/2+AzVUxOsXvDh3NMToj3inenmByT7AVviTGp4WadV85XK0WVs4SOcHd3rVyyhg5xc91M6NhPOyDZFTOuEw97n3iXzZh2uv497C6YUe38ILFQMSM61Yjs0Om8Gdaph3abdmfNkM60RrZoWTaDOvNi2yRyxpQsETcKVapMm6JHJCI/tzTgEfH4QXYxgUDgD+1pwmmFlV3oAAAAAElFTkSuQmCC");
+          background-position: 0;
+          background-repeat: no-repeat;
+        }
+        &:hover {
+          cursor: pointer;
+        }
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    // After slick's transforms:
+    button.slick-prev, button.slick-next {
+      position: absolute;
+      top: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 0;
+      // native size of this image: 11px X 27px
+      background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAbCAYAAACqenW9AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4QEPFh4p+pcjEAAAAT5JREFUOMuF1EFkHFEYB/DfbpsStsoSqiG5JPRS9pKSQ+6hdI8h5LByCJFDCXsqUUpOOYSobDW5tdfSUykhewyJEHKq3kroqYQlrM1lhuf1m+13GfP3M/Pme9+bmqVjY2oaL3A16nd+18bgNXzCI9yhXa+AM+gVUHH9XIV3MZllzQi/xGqQX0W4V/G2bo7X0QrgN3xPcQPvA3iHbUjxOzwN8AF+pngOWwG8wU55U+K9pKdpvcVtipfxOoCXOEqDOg4rWrWRB/Via/O6wFmEBwGex1SE9wL8uJiPf/Bu2cf/7Wa5jG7FR37IMXzFaYAX0wlMt3sTw4rZbsADs+0y/FPMxkKGn2CEk/wMNvGrAGkN8Dx9chn+xasMT+BZdFI+4jrIVyI8xJuoj1Wn+we+ZNn+wzF/o04xTC2cj/qdg3vQSzkAgC0jTwAAAABJRU5ErkJggg==');
+      background-repeat: no-repeat;
+      background-size: 11px 27px;
+      background-position: 25px;
+      &::-moz-focus-inner {
+        border: 0;
+      }
+    }
+    button.slick-prev {
+      left: -55px;
+      transform: translateY(-50%);
+    }
+    button.slick-next {
+      right: -55px;
+      // maybe over-engineering.
+      // but u have to look after this variable -
+      // it should correlate with arrow's height
+      $topAdjustment: calc(-50% + 50px);
+      transform: rotate(180deg) translateY($topAdjustment);
+    }
+    // override plugin's built-in nav-buttons
+    button.slick-prev:before, button.slick-next:before {
+      font-size: 0;
+    }
+    ul.slick-dots {
+      position: static;
+      font-size: 0;
+      li {
+        width: 10px;
+        height: 10px;
+        padding: 0;
+        margin: 0 10px 0 10px;
+      }
+      // somehow slick duplicate ul.video-previews > li:after in ul.slick-dots
+      & *:after {
+        display: none;
+      }
+    }
+
+    // dynamic styling depends on the number of the items in the slider.
+    // P.S. two instances of each selector for case if minifier will cut the space chars
+    ul.video-previews[data-slick*='"slidesToShow": 1'],
+    ul.video-previews[data-slick*='"slidesToShow":1'] {
+      width: 100%;
+      li.video-preview {
+        width: 100%;
+        height: 180px;
+      }
+    }
+    ul.video-previews[data-slick*='"slidesToShow": 2'],
+    ul.video-previews[data-slick*='"slidesToShow":2'] {
+      width: 100%;
+      li.video-preview {
+        width: calc(100% / 2);
+        height: 168px;
+      }
+    }
+    ul.video-previews[data-slick*='"slidesToShow": 3'],
+    ul.video-previews[data-slick*='"slidesToShow":3'] {
+      width: 100%;
+      li.video-preview {
+        width: calc(100% / 3);
+        height: 150px;
+      }
+    }
+
+    .sublayer {
+      z-index: -1 !important; // due to inline
+    }
+    .frontlayer {
+      z-index: 1 !important; // same
+    }
+  }
+}
