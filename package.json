@@ -10,7 +10,7 @@
     "jquery": "^3.2.1",
     "popper.js": "^1.14.3",
     "slick-carousel": "^1.6.0",
-    "swiper": "^4.2.2",
+    "swiper": "^6.5.1",
     "underscore": "^1.8.3"
   },
   "devDependencies": {
